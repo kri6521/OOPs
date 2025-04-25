@@ -14,7 +14,7 @@ class employee:
 
 # obj
 sam = employee()
-sam.name = "Sam raj"
+sam.name = "Sam raj"  # attribute from outside
 print(
     id(sam)
 )  # this id and above mentioned id are same as self, self is for sam, both are same
@@ -22,3 +22,5 @@ print(
 sam.travel("patna")  # ye likhne pr travel k andr ka sb print hoga
 print(type(sam))
 print(sam.name)
+
+# object k andr jo arg pass hota h wo constructor ko dekhkr hota
