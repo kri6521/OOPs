@@ -1,9 +1,23 @@
 class chatbook:
+
+    __user_id = 0  # static method
+
     def __init__(self):
+        self.id = chatbook.__user_id  # to access static method
+        chatbook.__user_id += 1
+        self.__name = "Default user"  # now name is a hidden attribute (encapsulation)
+        self.user_id = 0
+        self.user_id += 1
         self.username = ""
         self.password = ""
         self.loggedin = False
         self.menu()  # calling method under constructor
+
+    def get_name(self):  # getter
+        return self.__name
+
+    def set_name(self, value):  # setter
+        self.__name = value
 
     def menu(self):
         user_input = input(
@@ -68,4 +82,4 @@ class chatbook:
         self.menu()
 
 
-obj1 = chatbook()  # consturctor called as obj is made here
+# obj1 = chatbook()  # consturctor called as obj is made here
