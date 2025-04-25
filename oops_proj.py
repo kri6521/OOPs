@@ -19,9 +19,9 @@ class chatbook:
         elif user_input == "2":
             self.signin()
         elif user_input == "3":
-            pass
+            self.write_post()
         elif user_input == "4":
-            pass
+            self.sendmsg()
         else:
             exit()
 
@@ -48,12 +48,23 @@ class chatbook:
         print("\n")
         self.menu()
 
-    def signup(self):
-        email = input("enter your email here: ")
-        pwd = input("setup your password: ")
-        self.username = email
-        self.password = pwd
-        print("you have signed up successfully\n")
+    def write_post(self):
+        if self.loggedin == False:
+            print("please signup/signin first")
+        else:
+            txt = input("enter your msg here: ")
+            print(f"follwing content has been posted {txt}")
+        print("\n")
+        self.menu()
+
+    def sendmsg(self):
+        if self.loggedin == True:
+            txt = input("enter your msg: ")
+            frnd = input("whom to send msg: ")
+            print(f"your msg has been sent to {frnd}")
+        else:
+            print("please signup/signin first")
+        print("\n")
         self.menu()
 
 
